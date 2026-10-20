@@ -99,6 +99,14 @@ for precise in [false, true] {
         let ms = Int((CFAbsoluteTimeGetCurrent() - t0) * 1000)
         print("== \(mode) (\(ms) ms)")
         for d in found { print("   \(d.kind.rawValue)「\(d.text)」") }
+        if ci && !precise && !dark {
+            let req = VNRecognizeTextRequest()
+            req.recognitionLevel = .fast
+            req.usesLanguageCorrection = false
+            try? VNImageRequestHandler(cgImage: image, options: [:]).perform([req])
+            let raw = (req.results ?? []).compactMap { $0.topCandidates(1).first?.string }
+            print("::notice title=Lignes lues (rapide)::" + raw.joined(separator: " ⏎ "))
+        }
         if ci {
             print("::notice title=OCR \(mode) \(ms) ms::" + found.map { "\($0.kind.rawValue)「\($0.text)」" }.joined(separator: " "))
         }
