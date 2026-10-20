@@ -25,6 +25,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let toast = Toast()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        EditMenu.install(appName: "AikoShield")
         settings = ShieldSettings()
         shield = Shield(settings: settings)
         shield.onChange = { [weak self] in self?.updateIcon() }
