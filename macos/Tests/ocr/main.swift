@@ -21,7 +21,8 @@ let blocks: [Block] = [
                                          "GITHUB_TOKEN=ghp_A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8"]),
 ]
 let mustStay = "Réunion du 19/10/2026 à 14h30 — page 12 sur 345"
-let expected: [Kind: Int] = [.email: 1, .phone: 3, .amount: 3, .iban: 1, .card: 1, .code: 1, .password: 2, .secret: 2]
+// clés et mots de passe comptés ensemble : « ghp_… » lu « ghp … » reste masqué comme valeur de GITHUB_TOKEN
+let expected: [Kind: Int] = [.email: 1, .phone: 3, .amount: 3, .iban: 1, .card: 1, .code: 1, .secret: 4]
 
 func render(dark: Bool) -> (CGImage, CGRect) {
     let W = 2000, H = 1100
@@ -50,7 +51,7 @@ func render(dark: Bool) -> (CGImage, CGRect) {
         NSBezierPath(roundedRect: card, xRadius: 24, yRadius: 24).fill()
         (b.title as NSString).draw(at: NSPoint(x: x, y: top - 40), withAttributes: head)
         for (j, l) in b.lines.enumerated() {
-            let attrs = l == "482 913"
+            let attrs: [NSAttributedString.Key: Any] = l == "482 913"
                 ? [.font: NSFont.systemFont(ofSize: 52, weight: .semibold), .foregroundColor: ink] : body
             (l as NSString).draw(at: NSPoint(x: x, y: top - 100 - CGFloat(j) * 56), withAttributes: attrs)
         }
@@ -98,8 +99,11 @@ for precise in [false, true] {
         let ms = Int((CFAbsoluteTimeGetCurrent() - t0) * 1000)
         print("== \(mode) (\(ms) ms)")
         for d in found { print("   \(d.kind.rawValue)「\(d.text)」") }
+        if ci {
+            print("::notice title=OCR \(mode) \(ms) ms::" + found.map { "\($0.kind.rawValue)「\($0.text)」" }.joined(separator: " "))
+        }
         var counts: [Kind: Int] = [:]
-        for d in found { counts[d.kind, default: 0] += 1 }
+        for d in found { counts[d.kind == .password ? .secret : d.kind, default: 0] += 1 }
         var problems: [String] = []
         for (k, n) in expected.sorted(by: { $0.key.rawValue < $1.key.rawValue }) where (counts[k] ?? 0) < n {
             problems.append("\(k.rawValue) : \(counts[k] ?? 0)/\(n)")
