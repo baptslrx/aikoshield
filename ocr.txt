@@ -1,0 +1,73 @@
+IOServiceMatchingfailed for: AppleM2ScalerCSCDriver
+== rapide-clair (420 ms)
+   email「camille.martin@exemple.fr」
+   amount「2 450,10」
+   phone「06 12 34 56 78」
+   amount「8 120,00」
+   phone「+33 123 45 67 89」
+   amount「-13,49」
+   phone「+44 20 7946 0958」
+   iban「FR76 3000 6000 0112 3456 7890 189」
+   card「4970 1012 3456 7890」
+   secret「sk-proj-Xa82kdOQp1LmZ7ve3nRt5Ybh」
+   code「482 913」
+   password「PrOdlPass2026」
+   password「Soleil-Rouge-42」
+   secret「ghp_A1b2C3d4E5f6G7h819jOK112M3n405p6Q7r8」
+::notice title=Lignes lues (rapide)::Page de test AikoShield ⏎ CONTACTS ⏎ MES COMPTES ⏎ E-mail camille.martin@exemple.fr ⏎ Compte courant . Solde 2 450,10 ⏎ Portable 06 12 34 56 78 ⏎ Livret A 8 120,00 ⏎ Bureau +33 123 45 67 89 ⏎ Virement Netflix -13,49 ⏎ Londres +44 20 7946 0958 ⏎ IBAN FR76 3000 6000 0112 3456 7890 189 ⏎ Carte 4970 1012 3456 7890 ⏎ CODES ET ACCES ⏎ FICHIER .ENV ⏎ Votre code de verif ication ⏎ OPENAI_API_KEY=sk-proj-Xa82kdOQp1LmZ7ve3nRt5Ybh ⏎ 482 913 ⏎ DB PASSWORD=PrOdlPass2026 ⏎ Mot de passe: Soleil-Rouge-42 ⏎ GITHUB_TOKEN=ghp_A1b2C3d4E5f6G7h819jOK112M3n405p6Q7r8 ⏎ Reunion du 1911012026 a 14h30- page 12 sur 345
+::notice title=OCR rapide-clair 420 ms::email「camille.martin@exemple.fr」 amount「2 450,10」 phone「06 12 34 56 78」 amount「8 120,00」 phone「+33 123 45 67 89」 amount「-13,49」 phone「+44 20 7946 0958」 iban「FR76 3000 6000 0112 3456 7890 189」 card「4970 1012 3456 7890」 secret「sk-proj-Xa82kdOQp1LmZ7ve3nRt5Ybh」 code「482 913」 password「PrOdlPass2026」 password「Soleil-Rouge-42」 secret「ghp_A1b2C3d4E5f6G7h819jOK112M3n405p6Q7r8」
+  ok   tout est repéré
+== rapide-sombre (34 ms)
+   email「camille.martin@exemple.fr」
+   amount「2 450,10」
+   phone「06 12 34 56 78」
+   amount「8 120,00」
+   phone「+33 123 45 67 89」
+   amount「-13,49」
+   phone「+44 20 7946 0958」
+   iban「FR76 3000 6000 0112 3456 7890 189」
+   card「4970 1012 3456 7890」
+   secret「sk-proj-Xa82kdOQp1LmZ7ve3nRt5Ybh」
+   code「482 913」
+   password「PrOdlPass2026」
+   password「Soleil-Rouge-42」
+   secret「ghp_A1b2C3d4E5f6G7h819jOK112M3n405p6Q7r8」
+::notice title=OCR rapide-sombre 34 ms::email「camille.martin@exemple.fr」 amount「2 450,10」 phone「06 12 34 56 78」 amount「8 120,00」 phone「+33 123 45 67 89」 amount「-13,49」 phone「+44 20 7946 0958」 iban「FR76 3000 6000 0112 3456 7890 189」 card「4970 1012 3456 7890」 secret「sk-proj-Xa82kdOQp1LmZ7ve3nRt5Ybh」 code「482 913」 password「PrOdlPass2026」 password「Soleil-Rouge-42」 secret「ghp_A1b2C3d4E5f6G7h819jOK112M3n405p6Q7r8」
+  ok   tout est repéré
+== precis-clair (1783 ms)
+   email「camille.martin@exemple.fr」
+   phone「06 12 34 56 78」
+   phone「+331 23 45 67 89」
+   phone「+44 20 7946 0958」
+   amount「2 450,10 €」
+   amount「8 120,00 €」
+   amount「-13,49 €」
+   iban「FR76 3000 6000 0112 3456 7890 189」
+   card「4970 1012 3456 7890」
+   code「482 913」
+   password「Soleil-Rouge-42」
+   secret「sk-proj-Xa82kd0Qp1LmZ7ve3nRt5Ybh」
+   password「Pr0d!Pass2026」
+   password「ghp_A1b2C3d4E5f6G7h8|9jOK12M3n405p6Q7r8」
+::notice title=OCR precis-clair 1783 ms::email「camille.martin@exemple.fr」 phone「06 12 34 56 78」 phone「+331 23 45 67 89」 phone「+44 20 7946 0958」 amount「2 450,10 €」 amount「8 120,00 €」 amount「-13,49 €」 iban「FR76 3000 6000 0112 3456 7890 189」 card「4970 1012 3456 7890」 code「482 913」 password「Soleil-Rouge-42」 secret「sk-proj-Xa82kd0Qp1LmZ7ve3nRt5Ybh」 password「Pr0d!Pass2026」 password「ghp_A1b2C3d4E5f6G7h8|9jOK12M3n405p6Q7r8」
+  ok   tout est repéré
+== precis-sombre (1450 ms)
+   email「camille.martin@exemple.fr」
+   phone「06 12 34 56 78」
+   phone「+33 1 23 45 67 89」
+   phone「+44 20 7946 0958」
+   amount「2450,10 €」
+   amount「8 120,00 €」
+   amount「-13,49 €」
+   iban「FR76 3000 6000 0112 3456 7890 189」
+   card「4970 1012 3456 7890」
+   code「482 913」
+   password「Soleil-Rouge-42」
+   secret「sk-proj-Xa82kd0Qp1LmZ7ve3nRt5Ybh」
+   password「Pr0d!Pass2026」
+   secret「ghp_A1b2C3d4E5f6G7h8I9j0K112M3n405p6Q7r8」
+::notice title=OCR precis-sombre 1450 ms::email「camille.martin@exemple.fr」 phone「06 12 34 56 78」 phone「+33 1 23 45 67 89」 phone「+44 20 7946 0958」 amount「2450,10 €」 amount「8 120,00 €」 amount「-13,49 €」 iban「FR76 3000 6000 0112 3456 7890 189」 card「4970 1012 3456 7890」 code「482 913」 password「Soleil-Rouge-42」 secret「sk-proj-Xa82kd0Qp1LmZ7ve3nRt5Ybh」 password「Pr0d!Pass2026」 secret「ghp_A1b2C3d4E5f6G7h8I9j0K112M3n405p6Q7r8」
+  ok   tout est repéré
+  ok   partie visible d'une fenêtre recouverte (7500 / 7500)
+
+Tout est OK

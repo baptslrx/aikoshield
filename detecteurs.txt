@@ -1,0 +1,42 @@
+== Contacts
+  ok   Contact : baptiste.dupont@gmail.com  →  email「baptiste.dupont@gmail.com」
+  ok   Écris à contact@aikographic.com ou au 06 12 34 56 78  →  email「contact@aikographic.com」 phone「06 12 34 56 78」
+  ok   Tél +33 6 12 34 56 78  →  phone「+33 6 12 34 56 78」
+  ok   Bureau : 01.23.45.67.89  →  phone「01.23.45.67.89」
+  ok   Portable 0612345678  →  phone「0612345678」
+  ok   UK office +44 20 7946 0958  →  phone「+44 20 7946 0958」
+  ok   Page 12 sur 345 — 19/10/2026 14:03  →  rien
+  ok   Commande n° 2024-10-19-8812  →  rien
+== Banque
+  ok   IBAN FR76 3000 6000 0112 3456 7890 189  →  iban「FR76 3000 6000 0112 3456 7890 189」
+  ok   GB82 WEST 1234 5698 7654 32  →  iban「GB82 WEST 1234 5698 7654 32」
+  ok   Carte 4970 1012 3456 7890  →  card「4970 1012 3456 7890」
+  ok   4111 1111 1111 1111  →  card「4111 1111 1111 1111」
+  ok   Numéro de suivi 1234 5678 9012 3456  →  rien
+  ok   Solde : 1 234,56 €  →  amount「1 234,56 €」
+  ok   Virement -45,00 € à Marie  →  amount「-45,00 €」
+  ok   Livret A 8 120,00  →  amount「8 120,00」
+  ok   Prix : 49,99 €  →  rien
+  ok   CVV : 123  →  password「123」
+== Mots de passe et codes
+  ok   OPENAI_API_KEY=sk-proj-abcdefghijklmnopqrstuvwxyz123456  →  secret「sk-proj-abcdefghijklmnopqrstuvwxyz123456」
+  ok   token ghp_abcdefghijklmnopqrstuvwxyz0123456789  →  secret「ghp_abcdefghijklmnopqrstuvwxyz0123456789」
+  ok   aws AKIAIOSFODNN7EXAMPLE  →  secret「AKIAIOSFODNN7EXAMPLE」
+  ok   DB_PASSWORD=Sup3rS3cret!  →  password「Sup3rS3cret!」
+  ok   Mot de passe : Hunter2!  →  password「Hunter2!」
+  ok   password=abc123  →  password「abc123」
+  ok   Mot de passe oublié ?  →  rien
+  ok   Mot de passe : ••••••••  →  rien
+  ok   Votre code de vérification est 482 913  →  code「482 913」
+  ok   G-582913 est votre code Google  →  code「582913」
+  ok   582913  →  code「582913」
+  ok   Bonjour, rendez-vous à 14h30 le 19/10  →  rien
+  ok   Authorization: Bearer aZ9kP2xQ7rT4vB8nM3wL6yH1jF5gD0sC  →  secret「aZ9kP2xQ7rT4vB8nM3wL6yH1jF5gD0sC」
+  ok   Le code postal 75011 Paris  →  code「75011」
+== Contrôles
+  ok   Luhn
+  ok   IBAN mod 97
+  ok   écran bancaire complet → ["amount", "amount", "code"]
+  ok   catégorie désactivée → rien de masqué
+
+Tout est OK
