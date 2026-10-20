@@ -88,6 +88,8 @@ enum Detectors {
     private static let iban = rx(#"(?<![A-Za-z0-9])[A-Z]{2} ?\d{2}(?:[ ]?[A-Z0-9]{4}){2,7}(?:[ ]?[A-Z0-9]{1,4})?(?![A-Za-z0-9])"#)
     private static let card = rx(#"(?<![\w.,])(?:\d[ \-]?){12,18}\d(?![\w,])"#)
     private static let amount = rx(#"(?:[-+−] ?)?(?:\d{1,3}(?:[ .\x{202F}\x{00A0}]\d{3})+|\d+)(?:[,.]\d{2})? ?(?:€|EUR)|(?:€|\$|£) ?\d[\d ,.\x{202F}\x{00A0}]*\d"#)
+    /// Sur une page bancaire, un nombre à virgule suffit (la lecture rapide perd souvent le « € »).
+    private static let decimalAmount = rx(#"(?<![\w.,/:])[-+−]? ?\d{1,3}(?:[ .\x{202F}\x{00A0}]\d{3})*,\d{2}(?![\d,])"#)
     private static let otp = rx(#"(?<![\w.,/:€$£])(?:\d{3}[ \-]\d{3}|\d{4,8})(?![\w.,/:€%])"#)
     private static let knownSecret = rx(
         #"(?:sk-[A-Za-z0-9_\-]{20,}|sk_(?:live|test)_[A-Za-z0-9]{16,}|rk_live_[A-Za-z0-9]{16,}|"#
@@ -190,6 +192,7 @@ enum Detectors {
         }
         if context.bankingPage {
             each(amount) { add(.amount, $0.range) }
+            each(decimalAmount) { add(.amount, $0.range) }
         }
 
         // Contacts

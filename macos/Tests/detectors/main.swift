@@ -39,6 +39,7 @@ expect("4111 1111 1111 1111", [.card])  // Luhn valide
 expect("Numéro de suivi 1234 5678 9012 3456", [])  // ni Luhn ni mot « carte »
 expect("Solde : 1 234,56 €", [.amount], masked: ["1 234,56 €"], bank: true)
 expect("Virement -45,00 € à Marie", [.amount], bank: true)
+expect("Livret A 8 120,00", [.amount], masked: ["8 120,00"], bank: true)  // « € » perdu par la lecture rapide
 expect("Prix : 49,99 €", [], bank: false)  // hors page bancaire, les prix restent visibles
 expect("CVV : 123", [.password], masked: ["123"])
 
